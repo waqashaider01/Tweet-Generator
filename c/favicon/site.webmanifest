@@ -1,0 +1,22 @@
+{
+    "name": "Tweetgen",
+    "short_name": "Tweetgen",
+    "icons": [
+        {
+            "src": "/c/favicon/icon-192px.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/c/favicon/icon-512px.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/c/favicon/icon-square.svg",
+            "type": "image/svg+xml"
+        }
+    ],
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff"
+}

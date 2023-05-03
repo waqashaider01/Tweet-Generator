@@ -1,0 +1,134 @@
+@font-face {
+  font-family: "Bebas Neue";
+  font-style: normal;
+  src: url("/c/BebasNeue.woff");
+}
+
+.bebas,
+.floater {
+  font-weight: normal;
+  font-family: "Bebas Neue", "Inter", "Helvetica Neue", system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  .bebas,
+  .floater {
+    font-family: "Bebas Neue", "Inter (var)", "Helvetica Neue", system-ui,
+      -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+.buttons-container {
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px 30px;
+}
+
+.buttons-container h1 {
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 15px auto;
+  text-align: center;
+}
+
+.create-btn {
+  background: linear-gradient(0deg, #ddd 0%, #fff 15%, #fff 85%, #ddd 100%);
+  font-weight: bold;
+  font-size: 22px;
+  text-align: center;
+  display: inline-block;
+  border: 1px groove #cccccc;
+  height: 200px;
+  width: 200px;
+  vertical-align: top;
+  position: relative;
+  z-index: 1;
+  margin: 2px;
+}
+
+.floater {
+  background-color: #1da1f2;
+  color: #ffffff;
+  font-size: 1.15em;
+  position: absolute;
+  z-index: 2;
+  float: right;
+  top: -12px;
+  right: 5px;
+  line-height: 1;
+  padding: 5px 10px;
+}
+
+.btn-flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.create-btn img {
+  margin: auto;
+  max-width: 100%;
+  max-height: 70%;
+}
+
+.btn-bottom {
+  padding: 4px 0;
+}
+
+.create-btn:hover {
+  color: #ffffff;
+  background: #0066cc;
+}
+
+.coming-soon {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.intro {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.introdesc {
+  font-size: 1.3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.introdesc li {
+  font-size: 0.9em;
+  text-align: left;
+  margin: 2px 5% 2px 15%;
+  font-weight: normal;
+}
+
+.note {
+  margin-top: 0.25rem;
+  text-align: center;
+}
+
+.line {
+  background-color: #ddd;
+  width: 100%;
+  height: 2px;
+  margin: 20px 0;
+}
+
+a.whitelink,
+a.whitelink:hover {
+  text-decoration: none;
+}

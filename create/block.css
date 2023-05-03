@@ -1,0 +1,123 @@
+.banner {
+  background-color: #415364;
+}
+
+.top-half {
+  background-color: #171f2a;
+}
+
+.bottom-half {
+  background-color: #11161d;
+}
+
+.pfp {
+  border: 10px solid #171f2a;
+  border-radius: 50%;
+}
+
+.pagetitle {
+  font-size: 20pt;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+label,
+.preview {
+  font-weight: 600;
+  font-size: 14pt;
+}
+
+#fontSelect .form-check label {
+  font-weight: normal;
+}
+
+.preview {
+  text-align: center;
+}
+
+input[type="file"] {
+  display: block;
+  font-size: 1rem;
+}
+
+.form-item {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-check {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
+.inputinfo {
+  font-size: 10pt;
+  color: rgb(109, 117, 125);
+}
+
+textarea {
+  font-size: 12pt;
+}
+
+.disclaimer {
+  font-size: 12pt;
+}
+
+.download-button {
+  display: block;
+  font-size: 16pt;
+  margin: auto;
+  font-weight: 500;
+}
+
+.generatedImage {
+  background-color: #e9ecef;
+  border-radius: 6px;
+  font-size: 14pt;
+  margin: 8px auto;
+  padding: 10px 8px;
+  text-align: center;
+  width: 520px;
+  display: none;
+}
+
+.buttonlink {
+  display: inline;
+  border: none;
+  outline: none !important;
+  background-color: transparent;
+  color: #007bff;
+  text-decoration: none;
+  padding: 0;
+  margin-right: 5px;
+}
+
+.version {
+  text-align: right;
+  font-size: 10pt;
+}
+
+.jsLoadError {
+  font-size: 10pt;
+  color: red;
+  margin-bottom: 22px;
+}
+
+.notice-btn {
+  display: block;
+  text-align: center;
+  margin: 4px auto;
+}
+
+.notice-collapse {
+  max-width: 540px;
+  margin: 4px auto;
+}
+
+.notice-card {
+  font-size: 11pt;
+}
+
+canvas {
+  display: none !important;
+}

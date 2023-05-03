@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Twitter Block Generator | Tweetgen</title>
+    <meta
+      name="description"
+      content="Updated for Twitter's latest look, with Tweetgen you can make and share believable fake Tweets. You can even generate images of reply chains, users blocking you, getting suspended, and more."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Twitter Block Generator | Tweetgen" />
+    <meta
+      property="og:description"
+      content="Updated for Twitter's latest look, with Tweetgen you can make and share believable fake Tweets. You can even generate images of reply chains, users blocking you, getting suspended, and more."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- begin favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/c/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      sizes="any"
+      href="/c/favicon/favicon.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/c/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/c/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/c/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/c/favicon/safari-pinned-tab.svg"
+      color="#1da1f2"
+    />
+    <meta name="msapplication-TileColor" content="#1da1f2" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- end favicon -->
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/c/bootstrap.min.css" />
+    <!-- common css -->
+    <link rel="stylesheet" href="/c/common.css" />
+    <!-- page css -->
+    <link rel="stylesheet" href="block.css?v=0.5.4" />
+    <!-- generated tweet css -->
+    <link rel="stylesheet" href="twitter-blocksusp-core.css?v=0.5.4" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/4c8d8020f8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <noscript>
+      <div class="errorbanner">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 576 512"
+          style="height: 2em"
+        >
+          <path
+            fill="currentColor"
+            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+          ></path>
+        </svg>
+        <p>
+          <strong>Warning: JavaScript is disabled.</strong> JavaScript is
+          required for Tweetgen to work. Ensure that JavaScript is enabled and
+          that no browser extensions are blocking scripts.
+        </p>
+      </div>
+    </noscript>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"
+          ><img src="/c/tweetgen.svg" height="60" alt="Tweetgen Beta"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainnav"
+          aria-controls="mainnav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="navbar-nav collapse navbar-collapse mainnav" id="mainnav">
+          <ul class="navbar-nav nav-links">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <!-- 'Create' dropdown -->
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="createDropdown"
+                row="button"
+                data-bs-toggle="dropdown"
+                >Create</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="createDropdown">
+                <li>
+                  <a class="dropdown-item" href="/create/tweet.html">Tweet</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/create/reply.html"
+                    >Reply Chain</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/create/block.html">Block</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/create/suspension.html"
+                    >Suspension</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">(more coming soon!)</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/support">Support</a>
+            </li>
+            <li class="nav-item dropdown">
+              <!-- 'Legal' dropdown -->
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="legalDropdown"
+                row="button"
+                data-bs-toggle="dropdown"
+                >Legal</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="legalDropdown">
+                <li>
+                  <a class="dropdown-item" href="/terms">Terms of Service</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/privacy">Privacy Policy</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav nav-media">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://ko-fi.com/tweetgen"
+                target="_blank"
+                title="Buy me a coffee (via Ko-fi)"
+              >
+                <svg class="media-icon" viewBox="0 0 30.58 19.6">
+                  <path
+                    d="M30.42,5.9a6.54,6.54,0,0,0-2.9-4.5A7.6,7.6,0,0,0,23.12,0h-22A1.28,1.28,0,0,0,0,1.2v.3s-.11,9.7.09,15a3.3,3.3,0,0,0,3.3,3.1s10.11,0,14.91-.1H19c2.8-.7,3-3.3,3-4.7C27.53,15,31.42,11.1,30.42,5.9Zm-14,4.4c-1.59,1.9-5.09,5.1-5.09,5.1a.39.39,0,0,1-.3.1c-.08,0-.16,0-.19-.1h0l-.21-.2a58.58,58.58,0,0,1-5.09-5C4.62,9,4.22,6.8,5.42,5.5l.11-.1a3.93,3.93,0,0,1,2.21-.84A3.93,3.93,0,0,1,11.07,6a4.49,4.49,0,0,1,3.1-1.44,3,3,0,0,1,1.36.29C17.92,5.9,17.83,8.6,16.42,10.3Zm7.8.6A14.6,14.6,0,0,1,22,11V3.8h1.5A3,3,0,0,1,26,5a3.62,3.62,0,0,1,.8,2.3A3.36,3.36,0,0,1,24.22,10.9Z"
+                  ></path>
+                </svg>
+                <span class="d-lg-none smaller-nav-item"
+                  >Buy me a coffee (via Ko-Fi)</span
+                >
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://twitter.com/tweetgenonline"
+                target="_blank"
+                title="Our Twitter"
+              >
+                <svg class="media-icon" viewBox="0 0 30 24.38">
+                  <g>
+                    <path
+                      d="M26.93,6.07c0,.26,0,.53,0,.79C27,15,20.76,24.38,9.43,24.38h0A17.36,17.36,0,0,1,0,21.61a12,12,0,0,0,1.46.09,12.39,12.39,0,0,0,7.65-2.64,6.17,6.17,0,0,1-5.75-4.27,6.08,6.08,0,0,0,2.78-.11,6.16,6.16,0,0,1-4.94-6V8.57A6.08,6.08,0,0,0,4,9.34a6.17,6.17,0,0,1-1.9-8.22A17.41,17.41,0,0,0,14.77,7.55,6.16,6.16,0,0,1,25.26,1.94,12.46,12.46,0,0,0,29.17.45a6.2,6.2,0,0,1-2.7,3.4,12,12,0,0,0,3.53-1A12.59,12.59,0,0,1,26.93,6.07Z"
+                    ></path>
+                  </g>
+                </svg>
+                <span class="d-lg-none smaller-nav-item">Our Twitter</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- begin the meat of the page -->
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4">
+          <!-- form -->
+          <form>
+            <br />
+            <div class="pagetitle">Twitter Block Generator</div>
+            <strong
+              >By using Tweetgen you agree to our
+              <a href="/terms">Terms of Service</a> and
+              <a href="/privacy">Privacy Policy</a>.</strong
+            >
+            <!-- theme -->
+            <div class="form-item">
+              <label>Theme</label>
+              <div class="form-check">
+                <input
+                  type="radio"
+                  name="theme"
+                  id="themeLight"
+                  value="light"
+                  class="form-check-input"
+                  onchange="changeTheme()"
+                  checked
+                />
+                <label class="form-check-label" for="themeLight">Light</label>
+              </div>
+              <div class="form-check">
+                <input
+                  type="radio"
+                  name="theme"
+                  id="themeDim"
+                  value="dim"
+                  class="form-check-input"
+                  onchange="changeTheme()"
+                />
+                <label class="form-check-label" for="themeDim">Dim</label>
+              </div>
+              <div class="form-check">
+                <input
+                  type="radio"
+                  name="theme"
+                  id="themeDark"
+                  value="dark"
+                  class="form-check-input"
+                  onchange="changeTheme()"
+                />
+                <label class="form-check-label" for="themeDark">Dark</label>
+              </div>
+            </div>
+            <!-- font -->
+            <div class="form-item" id="fontSelect">
+              <label>Font</label>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="font"
+                  id="fontChirp"
+                  value="chirp"
+                  onchange="changeFont()"
+                  checked
+                />
+                <label class="form-check-label chirp-font" for="fontChirp"
+                  >Twitter Chirp font</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="font"
+                  id="fontSystem"
+                  value="system"
+                  onchange="changeFont()"
+                />
+                <label class="form-check-label system-font" for="fontSystem"
+                  >System font</label
+                >
+              </div>
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="radio"
+                  name="font"
+                  id="fontInter"
+                  value="inter"
+                  onchange="changeFont()"
+                />
+                <label
+                  class="form-check-label ui"
+                  for="fontInter"
+                  translate="no"
+                  >Inter</label
+                >
+              </div>
+            </div>
+            <!-- pfp -->
+            <div class="form-item">
+              <label for="pfpInput">Profile picture</label>
+              <input
+                type="file"
+                id="pfpInput"
+                name="pfp"
+                accept="image/png, image/jpeg"
+                onchange="handleFiles(this.files)"
+              />
+              <!-- Crossorigin currently has issues with html2canvas. Implement a proxy before we can use external URLs -->
+              <!-- <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">OR</span>
+                            </div>
+                            <input type="url" class="form-control" name="pfpURL" id="pfpURL" placeholder="Paste Image URL" onkeyup="handlePfpUrl()">
+                        </div> -->
+              <div class="inputerror" id="pfpError" style="display: none">
+                Please use a JPG or PNG image
+              </div>
+              <div class="inputerror" id="pfpUrlError" style="display: none">
+                Invalid image URL
+              </div>
+              <div class="inputinfo">
+                <button type="button" class="buttonlink" onclick="resetPfp()">
+                  <i class="fas fa-trash"></i> Reset Image
+                </button>
+                PNG and JPG images accepted. Make sure the image is square,
+                otherwise it may get stretched.
+              </div>
+            </div>
+            <!-- name -->
+            <div class="form-item">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                maxlength="50"
+              />
+            </div>
+            <!-- username -->
+            <div class="form-item">
+              <label for="username">Username (Twitter handle)</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <div class="input-group-text">@</div>
+                </div>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  name="username"
+                  pattern="[A-Za-z0-9_]{1,15}"
+                  maxlength="15"
+                />
+              </div>
+              <div class="inputinfo" id="unameError">
+                Can only be letters, numbers, and underscores.
+              </div>
+            </div>
+            <!-- verified -->
+            <div class="form-item">
+              <div class="form-check" onclick="verifiedUser()">
+                <input
+                  type="checkbox"
+                  class="form-check-input"
+                  id="verified"
+                  name="verified"
+                />
+                <label class="form-check-label" for="verified"
+                  >Verified user</label
+                >
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-8">
+          <h2 class="preview">Live preview</h2>
+          <!-- generated stuff -->
+          <div
+            class="tweetContainer chirp-font"
+            id="tweetContainer"
+            theme="light"
+          >
+            <div class="profile-canopy">
+              <div class="pfp-container">
+                <div class="pfp">
+                  <img
+                    class="pfp-image"
+                    id="pfpOutput"
+                    src="/c/default-pfp.png"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="namebar">
+              <div class="name">
+                <span id="nameOutput">Name</span>
+                <span
+                  class="verified"
+                  id="verifiedOutput"
+                  style="display: none"
+                >
+                  <svg viewBox="0 0 24 24">
+                    <g>
+                      <path
+                        d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"
+                      ></path>
+                    </g>
+                  </svg>
+                </span>
+              </div>
+              <div class="username">
+                @<span class="usernameOutput">Username</span>
+              </div>
+            </div>
+            <div class="timeline">
+              <div class="tl-text-container">
+                <div class="tl-main">
+                  @<span class="usernameOutput">Username</span> blocked you
+                </div>
+                <div class="tl-sub">
+                  You are blocked from following @<span class="usernameOutput"
+                    >Username</span
+                  >
+                  and viewing @<span class="usernameOutput">Username</span>’s
+                  Tweets.
+                </div>
+              </div>
+            </div>
+          </div>
+          <br /><button
+            class="btn btn-primary download-button"
+            id="downloadButton"
+            onclick="generate()"
+          >
+            <i class="fas fa-download"></i> Generate Image
+          </button>
+          <br />
+          <div
+            class="generatedImage"
+            id="generatedImageContainer"
+            style="display: none"
+          >
+            <img class="imageOutput" id="imageOutput" width="480" />
+            <br />Image generated! Right-click (or hold down if you're on
+            mobile) on it to copy or download it.
+          </div>
+          <br />
+          <div class="version" id="version"></div>
+        </div>
+      </div>
+    </div>
+    <script src="/c/compatible.js"></script>
+    <script src="/c/jquery-3.6.0.min.js"></script>
+    <script src="/c/bootstrap.bundle.min.js"></script>
+    <!-- <script src="/c/twitter-text/tgAutoLink.js"></script> -->
+    <!-- <script src="/c/twemoji/twemoji.min.js"></script> -->
+    <script src="html2canvas.min.js"></script>
+    <script src="block.js?v=0.5.4"></script>
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "8759116336e244d5abd623f9adb6e8ee"}'
+    ></script>
+  </body>
+</html>

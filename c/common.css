@@ -1,0 +1,295 @@
+/*
+------------
+Inter font family https://github.com/rsms/inter
+Note: Files ending with ".var.woff2" were renamed to "-var.woff2" to avoid an issue with Apache.
+*/
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("inter/Inter-Thin.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-Thin.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url("inter/Inter-ThinItalic.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-ThinItalic.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url("inter/Inter-ExtraLight.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-ExtraLight.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 200;
+  font-display: swap;
+  src: url("inter/Inter-ExtraLightItalic.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-ExtraLightItalic.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("inter/Inter-Light.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-Light.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url("inter/Inter-LightItalic.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-LightItalic.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("inter/Inter-Regular.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-Regular.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("inter/Inter-Italic.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-Italic.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("inter/Inter-Medium.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-Medium.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url("inter/Inter-MediumItalic.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-MediumItalic.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("inter/Inter-SemiBold.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-SemiBold.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+  src: url("inter/Inter-SemiBoldItalic.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-SemiBoldItalic.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("inter/Inter-Bold.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-Bold.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("inter/Inter-BoldItalic.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-BoldItalic.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("inter/Inter-ExtraBold.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-ExtraBold.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 800;
+  font-display: swap;
+  src: url("inter/Inter-ExtraBoldItalic.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-ExtraBoldItalic.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url("inter/Inter-Black.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-Black.woff?v=3.18") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("inter/Inter-BlackItalic.woff2?v=3.18") format("woff2"),
+    url("inter/Inter-BlackItalic.woff?v=3.18") format("woff");
+}
+
+/* Variable font */
+@font-face {
+  font-family: "Inter (var)";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: "Regular";
+  src: url("inter/Inter-roman-var.woff2?v=3.18") format("woff2");
+}
+
+@font-face {
+  font-family: "Inter (var)";
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: "Italic";
+  src: url("inter/Inter-italic-var.woff2?v=3.18") format("woff2");
+}
+
+/*
+------------
+*/
+
+a[href="https://ko-fi.com/tweetgen"]
+{
+  display: none; /* Hiding link to ko-fi until it's fully set up */
+}
+
+body {
+  margin-bottom: 10px;
+}
+
+body,
+.ui,
+.tooltip {
+  font-family: "Inter", "Helvetica Neue", system-ui, -apple-system, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  body,
+  .ui,
+  .tooltip {
+    font-family: "Inter (var)", "Helvetica Neue", system-ui, -apple-system,
+      "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+.btn-link,
+.btn-link:focus {
+  text-decoration: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+.btn-link:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+}
+
+.errorbanner {
+  margin: 0;
+  padding: 0.75rem;
+  background-color: #dc3545;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.errorbanner svg {
+  display: inline-block;
+  height: 2em;
+  margin-right: 0.5em;
+}
+
+.errorbanner p {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+}
+
+/*
+------------
+Navbar css
+*/
+
+.navbar {
+  font-size: 1.5rem;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.mainnav {
+  border: 2px solid #c4cfd6;
+  border-radius: 6px;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    font-size: 2rem;
+  }
+
+  .mainnav {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+  }
+
+  .nav-links {
+    min-width: 50vw;
+    justify-content: space-evenly;
+  }
+
+  .nav-links .nav-item {
+    margin-right: 0.75em;
+  }
+
+  .nav-media {
+    justify-content: flex-end;
+  }
+}
+
+.dropdown-item {
+  font-weight: bold;
+}
+
+svg.media-icon {
+  height: 0.8em;
+  vertical-align: middle;
+  fill: currentColor;
+}
+
+.smaller-nav-item {
+  font-size: 0.8em;
+}

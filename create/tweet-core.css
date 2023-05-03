@@ -1,0 +1,385 @@
+/* Twitter Chirp fonts */
+@font-face {
+  font-family: "Twitter Chirp";
+  src: url("/c/chirp-font/chirp-regular-web.woff");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Twitter Chirp";
+  src: url("/c/chirp-font/chirp-medium-web.woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Twitter Chirp";
+  src: url("/c/chirp-font/chirp-bold-web.woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Twitter Chirp";
+  src: url("/c/chirp-font/chirp-heavy-web.woff");
+  font-weight: 900;
+}
+
+.css-1dbjc4n {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  flex-basis: auto;
+  flex-shrink: 0;
+  min-height: 0px;
+  min-width: 0px;
+  padding: 0px;
+  position: relative;
+  z-index: 0;
+  align-items: stretch;
+  border: 0px solid black;
+}
+
+.tweetInnerContainer {
+  padding: 12px;
+}
+
+.tweetContainer {
+  /*width: 480px;
+    padding: 10px 15px 0 15px;*/
+  max-width: 624px;
+  min-width: 432px;
+}
+
+.chirp-font {
+  font-family: "Twitter Chirp", system-ui, -apple-system, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", sans-serif;
+}
+.system-font {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", sans-serif;
+}
+
+@media (max-width: 619px) {
+  .tweetContainer {
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 2px;
+  }
+}
+
+.classic.tweetContainer {
+  margin: 1rem auto;
+  border-style: solid;
+  border-width: 2px;
+  max-width: 628px;
+  min-width: 436px;
+}
+
+.tweetContainer[theme="light"] {
+  background-color: #ffffff;
+  border-color: #ebeef0;
+  --tweet-primary-color: #000000;
+  --tweet-secondary-color: #5b7083;
+  --tweet-tertiary-color: #c4cfd6;
+}
+
+.tweetContainer[theme="dim"] {
+  background-color: #15202b;
+  border-color: #38444d;
+  --tweet-primary-color: #ffffff;
+  --tweet-secondary-color: #8899a6;
+  --tweet-tertiary-color: #38444d;
+}
+
+.tweetContainer[theme="dark"] {
+  background-color: #000000;
+  border-color: #2f3336;
+  --tweet-primary-color: #d9d9d9;
+  --tweet-secondary-color: #6e767d;
+  --tweet-tertiary-color: #2f3336;
+}
+
+.simulatedLink,
+.tweetContainer a,
+.tweetContainer .debunk,
+.tweetContainer .btn-link {
+  color: #1b95e0;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+[contenteditable="true"] {
+  -webkit-user-modify: read-write-plaintext-only;
+}
+
+.emoji {
+  height: 1.2em;
+  margin-left: 0.075em;
+  margin-right: 0.075em;
+  vertical-align: -20%;
+}
+
+.tweetContainer[editing="off"] .editing-only {
+  display: none;
+}
+
+.tweetContainer[editing="on"] .editable-border {
+  padding: 5px;
+  border: 2px dashed var(--tweet-tertiary-color);
+  cursor: pointer;
+}
+
+.tweetContainer[editing="on"] .editable-border:focus {
+  outline: none;
+  border: 2px dashed var(--tweet-primary-color);
+  cursor: text;
+}
+
+.tweetContainer[editing="on"] .bullet,
+.tweetContainer[editing="on"] .verified {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.tweetContainer .headerContainer {
+  margin-bottom: 4px;
+  display: flex;
+  flex-shrink: 0;
+  position: relative;
+  max-width: 100%;
+  flex-direction: row;
+}
+
+.tweetContainer .pfpContainer {
+  margin-right: 12px;
+  display: flex;
+  flex-basis: 48px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tweetContainer .headerRight {
+  display: flex;
+  flex-basis: 0px;
+  flex-grow: 1;
+  align-items: stretch;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.tweetContainer .pfpContainer img {
+  border-radius: 9999px;
+}
+
+.tweetContainer .userinfo {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-shrink: 1;
+  justify-content: center;
+}
+
+.tweetContainer .nameContainer,
+.tweetContainer .username {
+  display: flex;
+  font-size: 15px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+  flex-direction: row;
+}
+
+.tweetContainer .username {
+  color: var(--tweet-secondary-color);
+}
+
+.tweetContainer .nameContainer span {
+  display: inline;
+  overflow-wrap: break-word;
+}
+
+.tweetContainer .nameContainer .name {
+  font-weight: bold;
+  color: var(--tweet-primary-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tweetContainer[theme="light"] .verified {
+  color: #1da1f2;
+}
+
+.tweetContainer[theme="dim"] .verified,
+.tweetContainer[theme="dark"] .verified {
+  color: var(--tweet-primary-color);
+}
+
+.tweetContainer .verified {
+  fill: currentcolor;
+  margin-left: 2px;
+  min-width: 0px;
+  height: 1.25em;
+  width: 1.25em;
+  flex-shrink: 0;
+}
+
+.tweetContainer .verified svg {
+  position: relative;
+  vertical-align: baseline;
+}
+
+.tweetContainer .tweetDropdown {
+  display: flex;
+  align-self: flex-start;
+  justify-content: flex-start;
+  margin-left: 20px;
+  flex-direction: row;
+  color: var(--tweet-secondary-color);
+}
+
+.tweetContainer .tweetDropdown svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.tweetContainer .editorInfo {
+  color: var(--tweet-secondary-color);
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+#clientInfo,
+#numbersInfo {
+  margin-top: 6px;
+}
+
+.tweetContainer .btn-link {
+  font-size: 1em;
+  margin-right: 3px;
+}
+
+.tweetContainer .tweetText {
+  margin-top: 10px;
+  font-size: 23px;
+  line-height: 1.3125;
+  overflow-wrap: break-word;
+  color: var(--tweet-primary-color);
+}
+
+.tweetContainer[editing="on"] .tweetText {
+  font-size: 20px;
+}
+
+.tweetContainer .tweetText span {
+  white-space: pre-wrap;
+}
+
+.tweetContainer .imgContainer {
+  margin-top: 6px;
+  border: 1px solid;
+  border-color: var(--tweet-tertiary-color);
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.tweetContainer .tweetImg {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tweetContainer .debunk {
+  border-bottom: 1px solid var(--tweet-tertiary-color);
+  display: inline-flex;
+  align-items: center;
+  z-index: 0;
+  position: relative;
+  flex-basis: auto;
+  flex-shrink: 0;
+  overflow-wrap: break-word;
+  width: 100%;
+  padding: 10px 0 5px;
+}
+
+.tweetContainer .debunkIcon {
+  font-size: 26px;
+  width: 26px;
+  height: 26px;
+  align-self: flex-start;
+  margin-right: 7px;
+  line-height: 1;
+}
+
+.tweetContainer .debunkText {
+  font-size: 14px;
+  margin-top: -2px;
+  overflow: hidden;
+}
+
+.tweetContainer .tweetDetails {
+  margin: 15px 15px 15px 0;
+  font-size: 15px;
+  color: var(--tweet-secondary-color);
+  overflow-wrap: break-word;
+}
+
+.tweetContainer .tweetNumbers {
+  border-top: 1px solid var(--tweet-tertiary-color);
+  padding: 15px 0;
+  color: var(--tweet-secondary-color);
+}
+
+.tweetContainer .tweetNumbers b {
+  color: var(--tweet-primary-color);
+}
+
+.tweetContainer .retweets,
+.tweetContainer .quotes {
+  margin-right: 20px;
+}
+
+.tweetContainer .buttonsContainer {
+  border-top: 1px solid var(--tweet-tertiary-color);
+  display: flex;
+  justify-content: space-around;
+  height: 49px;
+  flex-direction: row;
+}
+
+.tweetContainer .tweetButton {
+  display: inline-flex;
+  padding: 0 0.85rem;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  color: var(--tweet-secondary-color);
+}
+
+.tweetContainer .tweetButton svg {
+  height: 1.5em;
+  width: 1.5em;
+  fill: currentColor;
+}
+
+.cloneframe {
+  visibility: hidden !important;
+  position: fixed;
+  left: -10000px;
+  top: 0px;
+  border: none;
+}
+
+.tweetOptions button {
+  font-weight: 600;
+}
+
+.tweetOptions svg,
+.tweetOptions .fas {
+  height: 1.3em;
+  width: 1.3em;
+  text-align: center;
+  margin-right: 4px;
+  color: #6c757d;
+}

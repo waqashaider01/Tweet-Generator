@@ -1,0 +1,219 @@
+/* Twitter Chirp fonts */
+@font-face {
+  font-family: "Twitter Chirp";
+  src: url("/c/chirp-font/chirp-regular-web.woff");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Twitter Chirp";
+  src: url("/c/chirp-font/chirp-medium-web.woff");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Twitter Chirp";
+  src: url("/c/chirp-font/chirp-bold-web.woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Twitter Chirp";
+  src: url("/c/chirp-font/chirp-heavy-web.woff");
+  font-weight: 900;
+}
+
+.tweetContainer {
+  width: 495px;
+  /*height: 835px;*/
+  margin: 10px auto;
+}
+
+.chirp-font {
+  font-family: "Twitter Chirp", system-ui, -apple-system, "Segoe UI", Roboto,
+    Ubuntu, "Helvetica Neue", sans-serif;
+}
+.system-font {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", sans-serif;
+}
+
+.tweetContainer[theme="light"] .name,
+.tweetContainer[theme="light"] .tl-main {
+  color: #141619;
+}
+
+.tweetContainer[theme="dim"] .name,
+.tweetContainer[theme="dim"] .verified,
+.tweetContainer[theme="dim"] .tl-main {
+  color: #ffffff;
+}
+
+.tweetContainer[theme="dark"] .name,
+.tweetContainer[theme="dark"] .verified,
+.tweetContainer[theme="dark"] .tl-main {
+  color: #d9d9d9;
+}
+
+.tweetContainer[theme="light"] .username,
+.tweetContainer[theme="light"] .tl-sub {
+  color: #687684;
+}
+
+.tweetContainer[theme="dim"] .username,
+.tweetContainer[theme="dim"] .tl-sub {
+  color: #8794a0;
+}
+
+.tweetContainer[theme="dark"] .username,
+.tweetContainer[theme="dark"] .tl-sub {
+  color: #7d8289;
+}
+
+.tweetContainer[theme="light"] a,
+.tweetContainer[theme="light"] .fakelink {
+  color: #4692da;
+}
+
+.tweetContainer[theme="dim"] a,
+.tweetContainer[theme="dim"] .fakelink,
+.tweetContainer[theme="dark"] a,
+.tweetContainer[theme="dark"] .fakelink {
+  color: #4c9eeb;
+}
+
+.tweetContainer[theme="dim"] .profile-canopy {
+  height: 39px;
+  background-color: #415364;
+}
+
+.tweetContainer[theme="light"] .profile-canopy {
+  height: 39px;
+  background-color: #ced5dc;
+}
+
+.tweetContainer[theme="dark"] .profile-canopy {
+  height: 39px;
+  background-color: #2f3235;
+}
+
+.tweetContainer .pfp-container {
+  bottom: -10px;
+  left: 15px;
+  position: relative;
+}
+
+.tweetContainer[theme="light"] .pfp {
+  height: 89px;
+  width: 89px;
+  background-color: #ced5dc;
+  border: 5px solid #ffffff;
+  border-radius: 50%;
+  position: relative;
+}
+
+.tweetContainer[theme="dim"] .pfp {
+  height: 89px;
+  width: 89px;
+  background-color: #415364;
+  border: 5px solid #171f2a;
+  border-radius: 50%;
+  position: relative;
+}
+
+.tweetContainer[theme="dark"] .pfp {
+  height: 89px;
+  width: 89px;
+  background-color: #2f3235;
+  border: 5px solid #000000;
+  border-radius: 50%;
+  position: relative;
+}
+
+.tweetContainer img.pfp-image {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.tweetContainer[theme="light"] .namebar {
+  height: 166px;
+  background-color: #ffffff;
+  padding: 75px 25px 25px 18px;
+}
+
+.tweetContainer[theme="dim"] .namebar {
+  height: 166px;
+  background-color: #171f2a;
+  padding: 75px 25px 25px 18px;
+}
+
+.tweetContainer[theme="dark"] .namebar {
+  height: 166px;
+  background-color: #000000;
+  padding: 75px 25px 25px 18px;
+}
+
+.tweetContainer .name {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 1.1;
+  overflow: hidden;
+}
+
+.tweetContainer .verified {
+  fill: currentColor;
+  font-weight: normal;
+  vertical-align: middle;
+  height: 25px;
+  width: 25px;
+}
+
+.tweetContainer .verified svg {
+  position: relative;
+  vertical-align: baseline;
+}
+
+.tweetContainer[theme="light"] .verified {
+  color: #1da1f2;
+}
+
+.tweetContainer .username {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.tweetContainer[theme="light"] .timeline {
+  background-color: #e7ecf0;
+}
+
+.tweetContainer[theme="dim"] .timeline {
+  background-color: #11161d;
+}
+
+.tweetContainer[theme="dark"] .timeline {
+  background-color: #15171b;
+}
+
+.tweetContainer .tl-text-container {
+  /*position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 48px;*/
+  padding: 50px;
+}
+
+.tweetContainer .tl-main {
+  font-weight: bold;
+  font-size: 28px;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.tweetContainer .tl-sub {
+  color: #687684;
+  font-size: 17px;
+  margin-top: 22px;
+  text-align: center;
+  line-height: 25px;
+}

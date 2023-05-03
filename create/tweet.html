@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tweet Generator | Tweetgen</title>
+    <meta
+      name="description"
+      content="Updated for Twitter's latest look, with Tweetgen you can make and share believable fake Tweets. You can even generate images of reply chains, users blocking you, getting suspended, and more."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tweet Generator | Tweetgen" />
+    <meta
+      property="og:description"
+      content="Updated for Twitter's latest look, with Tweetgen you can make and share believable fake Tweets. You can even generate images of reply chains, users blocking you, getting suspended, and more."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- begin favicon -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/c/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      sizes="any"
+      href="/c/favicon/favicon.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/c/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/c/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/c/favicon/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="/c/favicon/safari-pinned-tab.svg"
+      color="#1da1f2"
+    />
+    <meta name="msapplication-TileColor" content="#1da1f2" />
+    <meta name="theme-color" content="#ffffff" />
+    <!-- end favicon -->
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/c/bootstrap.min.css" />
+    <!-- common css -->
+    <link rel="stylesheet" href="/c/common.css" />
+    <!-- page css -->
+    <link rel="stylesheet" href="tweet.css?v=0.5.4" />
+    <!-- generated tweet css -->
+    <link rel="stylesheet" href="tweet-core.css?v=0.5.4" />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/4c8d8020f8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <noscript>
+      <div class="errorbanner">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 576 512"
+          style="height: 2em"
+        >
+          <path
+            fill="currentColor"
+            d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937 0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154 0l239.94 416.028zM288 354c-25.405 0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346l7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373 0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884 0-12.356 5.78-11.981 12.654z"
+          ></path>
+        </svg>
+        <p>
+          <strong>Warning: JavaScript is disabled.</strong> JavaScript is
+          required for Tweetgen to work. Ensure that JavaScript is enabled and
+          that no browser extensions are blocking scripts.
+        </p>
+      </div>
+    </noscript>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/"
+          ><img src="/c/tweetgen.svg" height="60" alt="Tweetgen Beta"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#mainnav"
+          aria-controls="mainnav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="navbar-nav collapse navbar-collapse mainnav" id="mainnav">
+          <ul class="navbar-nav nav-links">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <!-- 'Create' dropdown -->
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="createDropdown"
+                row="button"
+                data-bs-toggle="dropdown"
+                >Create</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="createDropdown">
+                <li>
+                  <a class="dropdown-item" href="/create/tweet.html">Tweet</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/create/reply.html"
+                    >Reply Chain</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/create/block.html">Block</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/create/suspension.html"
+                    >Suspension</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">(more coming soon!)</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/support">Support</a>
+            </li>
+            <li class="nav-item dropdown">
+              <!-- 'Legal' dropdown -->
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="legalDropdown"
+                row="button"
+                data-bs-toggle="dropdown"
+                >Legal</a
+              >
+              <ul class="dropdown-menu" aria-labelledby="legalDropdown">
+                <li>
+                  <a class="dropdown-item" href="/terms">Terms of Service</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="/privacy">Privacy Policy</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="navbar-nav nav-media">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://ko-fi.com/tweetgen"
+                target="_blank"
+                title="Buy me a coffee (via Ko-fi)"
+              >
+                <svg class="media-icon" viewBox="0 0 30.58 19.6">
+                  <path
+                    d="M30.42,5.9a6.54,6.54,0,0,0-2.9-4.5A7.6,7.6,0,0,0,23.12,0h-22A1.28,1.28,0,0,0,0,1.2v.3s-.11,9.7.09,15a3.3,3.3,0,0,0,3.3,3.1s10.11,0,14.91-.1H19c2.8-.7,3-3.3,3-4.7C27.53,15,31.42,11.1,30.42,5.9Zm-14,4.4c-1.59,1.9-5.09,5.1-5.09,5.1a.39.39,0,0,1-.3.1c-.08,0-.16,0-.19-.1h0l-.21-.2a58.58,58.58,0,0,1-5.09-5C4.62,9,4.22,6.8,5.42,5.5l.11-.1a3.93,3.93,0,0,1,2.21-.84A3.93,3.93,0,0,1,11.07,6a4.49,4.49,0,0,1,3.1-1.44,3,3,0,0,1,1.36.29C17.92,5.9,17.83,8.6,16.42,10.3Zm7.8.6A14.6,14.6,0,0,1,22,11V3.8h1.5A3,3,0,0,1,26,5a3.62,3.62,0,0,1,.8,2.3A3.36,3.36,0,0,1,24.22,10.9Z"
+                  ></path>
+                </svg>
+                <span class="d-lg-none smaller-nav-item"
+                  >Buy me a coffee (via Ko-Fi)</span
+                >
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="https://twitter.com/tweetgenonline"
+                target="_blank"
+                title="Our Twitter"
+              >
+                <svg class="media-icon" viewBox="0 0 30 24.38">
+                  <g>
+                    <path
+                      d="M26.93,6.07c0,.26,0,.53,0,.79C27,15,20.76,24.38,9.43,24.38h0A17.36,17.36,0,0,1,0,21.61a12,12,0,0,0,1.46.09,12.39,12.39,0,0,0,7.65-2.64,6.17,6.17,0,0,1-5.75-4.27,6.08,6.08,0,0,0,2.78-.11,6.16,6.16,0,0,1-4.94-6V8.57A6.08,6.08,0,0,0,4,9.34a6.17,6.17,0,0,1-1.9-8.22A17.41,17.41,0,0,0,14.77,7.55,6.16,6.16,0,0,1,25.26,1.94,12.46,12.46,0,0,0,29.17.45a6.2,6.2,0,0,1-2.7,3.4,12,12,0,0,0,3.53-1A12.59,12.59,0,0,1,26.93,6.07Z"
+                    ></path>
+                  </g>
+                </svg>
+                <span class="d-lg-none smaller-nav-item">Our Twitter</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- begin the meat of the page -->
+
+    <div class="container-fluid">
+      <h1>Tweet Generator</h1>
+      <strong
+        >By using Tweetgen you agree to our
+        <a href="/terms">Terms of Service</a> and
+        <a href="/privacy">Privacy Policy</a>.</strong
+      >
+      <div class="container-sm">
+        <h3>How to use the new editor:</h3>
+        <ul class="instructions">
+          <li>
+            Everything inside a
+            <span class="fake-edit-border">dashed border</span> is editable.
+            Click on one to edit it.
+          </li>
+          <li>
+            Clicking on a Tweet's
+            <span class="fake-edit-border" aria-label="Tweet options"
+              ><svg viewBox="0 0 24 24">
+                <g>
+                  <circle cx="5" cy="12" r="2"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <circle cx="19" cy="12" r="2"></circle>
+                </g></svg
+            ></span>
+            icon will bring up additional options, such as adding an image and
+            toggling the verified badge.
+          </li>
+          <li>
+            Want to add replies? Use the
+            <a href="reply.html">Reply Chain Generator</a>!
+          </li>
+          <li>
+            Prefer the old editor? The
+            <a href="tweet-classic.html">classic editor</a> is still available.
+          </li>
+        </ul>
+      </div>
+
+      <div class="editor-container">
+        <div class="editor">
+          <div class="toolbar" id="toolbar">
+            <div class="loading" id="loading">
+              <i class="fas fa-sync-alt spinner"></i> Loading...
+            </div>
+            <div
+              class="toolbarOptions"
+              id="toolbarOptions"
+              style="display: none"
+            >
+              <label class="formLabel">Background color</label>
+              <div class="toolbarSelect" id="themeSelect">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="theme"
+                    id="themeLight"
+                    value="themeLight"
+                    onchange="changeTheme()"
+                    checked
+                  />
+                  <label class="form-check-label" for="themeLight">Light</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="theme"
+                    id="themeDim"
+                    value="themeDim"
+                    onchange="changeTheme()"
+                  />
+                  <label class="form-check-label" for="themeDim">Dim</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="theme"
+                    id="themeDark"
+                    value="themeDark"
+                    onchange="changeTheme()"
+                  />
+                  <label class="form-check-label" for="themeDark">Dark</label>
+                </div>
+              </div>
+              <label class="formLabel">Font</label>
+              <div class="toolbarSelect" id="fontSelect">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="font"
+                    id="fontChirp"
+                    value="chirp"
+                    onchange="changeFont()"
+                    checked
+                  />
+                  <label class="form-check-label chirp-font" for="fontChirp"
+                    >Twitter Chirp font</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="font"
+                    id="fontSystem"
+                    value="system"
+                    onchange="changeFont()"
+                  />
+                  <label class="form-check-label system-font" for="fontSystem"
+                    >System font</label
+                  >
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="font"
+                    id="fontInter"
+                    value="inter"
+                    onchange="changeFont()"
+                  />
+                  <label
+                    class="form-check-label ui"
+                    for="fontInter"
+                    translate="no"
+                    >Inter</label
+                  >
+                </div>
+              </div>
+              <label class="formLabel">Emoji style</label>
+              <div class="toolbarSelect" id="emojiSelect">
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="emoji"
+                    id="emojiTwemoji"
+                    value="twemoji"
+                    onchange="changeEmoji()"
+                    checked
+                  />
+                  <label class="form-check-label" for="emojiTwemoji"
+                    >Twitter emoji
+                    <img class="emoji" src="/c/twemoji/sample.svg"
+                  /></label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input
+                    class="form-check-input"
+                    type="radio"
+                    name="emoji"
+                    id="emojiSystem"
+                    value="system"
+                    onchange="changeEmoji()"
+                  />
+                  <label class="form-check-label" for="emojiSystem"
+                    >System emoji 😂😭💀</label
+                  >
+                </div>
+              </div>
+              <div class="toolbarButtons" id="toolbarButtons">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  id="previewButton"
+                  onclick="toggleEditing()"
+                >
+                  <i class="fas fa-eye"></i> Preview image
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  id="generateButton"
+                  onclick="generate()"
+                >
+                  <i class="fas fa-download"></i> Generate image
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tweetContainer chirp-font"
+            id="tweetContainer"
+            editing="off"
+            theme="light"
+          >
+            <div class="tweetInnerContainer" id="tweetInnerContainer">
+              <div class="headerContainer css-1dbjc4n">
+                <div class="pfpContainer css-1dbjc4n">
+                  <img
+                    class="pfp editable-border"
+                    src="/c/default-pfp.png"
+                    width="48"
+                    height="48"
+                    id="pfp"
+                    onclick="queryModal('pfp')"
+                  />
+                </div>
+                <div class="headerRight css-1dbjc4n">
+                  <div class="userinfo css-1dbjc4n">
+                    <div class="nameContainer css-1dbjc4n">
+                      <span
+                        class="name editable editable-border"
+                        id="name"
+                        onfocus="checkName(this)"
+                        oninput="checkName(this)"
+                        onblur="checkName(this, true)"
+                        >Name</span
+                      >
+                      <span
+                        class="verified"
+                        id="verified"
+                        style="display: none"
+                      >
+                        <svg viewBox="0 0 24 24">
+                          <g>
+                            <path
+                              d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"
+                            ></path>
+                          </g>
+                        </svg>
+                      </span>
+                    </div>
+                    <div
+                      class="editorInfo ui"
+                      id="nameInfo"
+                      style="display: none"
+                    ></div>
+                    <div class="username css-1dbjc4n">
+                      <span
+                        class="editable editable-border"
+                        id="username"
+                        onfocus="checkUsername(this)"
+                        oninput="checkUsername(this)"
+                        onblur="checkUsername(this, true)"
+                        >@Username</span
+                      >
+                    </div>
+                    <div
+                      class="editorInfo ui"
+                      id="usernameInfo"
+                      style="display: none"
+                    ></div>
+                  </div>
+                  <div class="dropup">
+                    <div
+                      class="tweetDropdown editable-border"
+                      data-bs-toggle="dropdown"
+                      aria-label="Tweet options"
+                      aria-expanded="false"
+                    >
+                      <svg viewBox="0 0 24 24">
+                        <g>
+                          <circle cx="5" cy="12" r="2"></circle>
+                          <circle cx="12" cy="12" r="2"></circle>
+                          <circle cx="19" cy="12" r="2"></circle>
+                        </g>
+                      </svg>
+                    </div>
+                    <ul class="tweetOptions dropdown-menu ui">
+                      <li>
+                        <button
+                          class="dropdown-item"
+                          type="button"
+                          onclick="toggleVerified()"
+                        >
+                          <svg fill="#1da1f2" viewBox="0 0 24 24">
+                            <g>
+                              <path
+                                d="M22.5 12.5c0-1.58-.875-2.95-2.148-3.6.154-.435.238-.905.238-1.4 0-2.21-1.71-3.998-3.818-3.998-.47 0-.92.084-1.336.25C14.818 2.415 13.51 1.5 12 1.5s-2.816.917-3.437 2.25c-.415-.165-.866-.25-1.336-.25-2.11 0-3.818 1.79-3.818 4 0 .494.083.964.237 1.4-1.272.65-2.147 2.018-2.147 3.6 0 1.495.782 2.798 1.942 3.486-.02.17-.032.34-.032.514 0 2.21 1.708 4 3.818 4 .47 0 .92-.086 1.335-.25.62 1.334 1.926 2.25 3.437 2.25 1.512 0 2.818-.916 3.437-2.25.415.163.865.248 1.336.248 2.11 0 3.818-1.79 3.818-4 0-.174-.012-.344-.033-.513 1.158-.687 1.943-1.99 1.943-3.484zm-6.616-3.334l-4.334 6.5c-.145.217-.382.334-.625.334-.143 0-.288-.04-.416-.126l-.115-.094-2.415-2.415c-.293-.293-.293-.768 0-1.06s.768-.294 1.06 0l1.77 1.767 3.825-5.74c.23-.345.696-.436 1.04-.207.346.23.44.696.21 1.04z"
+                              ></path>
+                            </g>
+                          </svg>
+                          Toggle verified badge
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="dropdown-item"
+                          type="button"
+                          onclick="queryModal('img')"
+                        >
+                          <i class="fas fa-image"></i> Add image
+                        </button>
+                      </li>
+                      <li>
+                        <button
+                          class="dropdown-item"
+                          type="button"
+                          onclick="toggleDebunk()"
+                        >
+                          <svg fill="currentColor" viewBox="0 0 24 24">
+                            <g>
+                              <circle
+                                cx="12.025"
+                                cy="16.437"
+                                r="1.281"
+                              ></circle>
+                              <path
+                                d="M14.39 7.194c-.094-.127-.242-.2-.4-.2h-3.928c-.158 0-.307.073-.4.2-.096.126-.125.29-.08.442l1.814 6.098c.063.212.258.357.48.357h.298c.222 0 .416-.145.48-.356l1.813-6.098c.047-.152.017-.316-.077-.442z"
+                              ></path>
+                              <path
+                                d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z"
+                              ></path>
+                            </g>
+                          </svg>
+                          <span id="addOrRemoveDebunk">Add</span> fact check
+                          warning
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="css-1dbjc4n" dir="auto">
+                <span
+                  class="tweetText editable editable-border"
+                  id="tweetText"
+                  onfocus="editText(this)"
+                  oninput="charCount(this)"
+                  onblur="charCount(this, true)"
+                  >Your tweet here!</span
+                >
+                <div
+                  class="editorInfo ui"
+                  id="charCounter"
+                  style="display: none"
+                ></div>
+              </div>
+              <div
+                class="imgContainer editable-border"
+                id="imgContainer"
+                style="display: none"
+                onclick="queryModal('img')"
+              >
+                <img class="tweetImg" id="tweetImg" />
+              </div>
+              <div class="debunk" id="debunkDisplay" style="display: none">
+                <div class="debunkIcon tweetIcon">
+                  <svg fill="currentColor" viewBox="0 0 24 24">
+                    <g>
+                      <circle cx="12.025" cy="16.437" r="1.281"></circle>
+                      <path
+                        d="M14.39 7.194c-.094-.127-.242-.2-.4-.2h-3.928c-.158 0-.307.073-.4.2-.096.126-.125.29-.08.442l1.814 6.098c.063.212.258.357.48.357h.298c.222 0 .416-.145.48-.356l1.813-6.098c.047-.152.017-.316-.077-.442z"
+                      ></path>
+                      <path
+                        d="M12 22.75C6.072 22.75 1.25 17.928 1.25 12S6.072 1.25 12 1.25 22.75 6.072 22.75 12 17.928 22.75 12 22.75zm0-20C6.9 2.75 2.75 6.9 2.75 12S6.9 21.25 12 21.25s9.25-4.15 9.25-9.25S17.1 2.75 12 2.75z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div
+                  class="debunkText editable editable-border"
+                  id="debunkText"
+                  onblur="checkDebunk()"
+                >
+                  This fact is disputed
+                </div>
+              </div>
+              <div class="tweetDetails">
+                <span class="editable-border" onclick="queryModal('date')">
+                  <span id="timeOutput">12:00 PM</span> ·
+                  <span id="monthOutput">Jun</span>
+                  <span id="dayOutput">1</span>,
+                  <span id="yearOutput">2021</span>
+                </span>
+                <span id="clientDisplay" style="display: none">
+                  ·
+                  <span
+                    class="client editable editable-border placeholder"
+                    id="client"
+                    onfocus="editClient()"
+                    onblur="blurClient()"
+                    >Click to add client...</span
+                  ></span
+                >
+                <div
+                  class="editorInfo ui"
+                  id="clientInfo"
+                  style="display: none"
+                >
+                  For example: "Twitter for iPhone", "Twitter Web App", etc. You
+                  can leave this empty if you do not want it included.
+                </div>
+              </div>
+              <div class="tweetNumbers" id="tweetNumbers" style="display: none">
+                <span
+                  class="tweetNumber retweets"
+                  id="retweetsDisplay"
+                  style="display: none"
+                  ><b
+                    class="editable editable-border"
+                    id="retweets"
+                    onfocus="startInteraction('retweets')"
+                    oninput="checkInteraction(this)"
+                    onblur="parseInteraction('retweets')"
+                    >0</b
+                  >
+                  Retweet<span class="plural" id="retweetsPlural">s</span></span
+                >
+                <span
+                  class="tweetNumber quotes"
+                  id="quotesDisplay"
+                  style="display: none"
+                  ><b
+                    class="editable editable-border"
+                    id="quotes"
+                    onfocus="startInteraction('quotes')"
+                    oninput="checkInteraction(this)"
+                    onblur="parseInteraction('quotes')"
+                    >0</b
+                  >
+                  Quote Tweet<span class="plural" id="quotesPlural"
+                    >s</span
+                  ></span
+                >
+                <span
+                  class="tweetNumber likes"
+                  id="likesDisplay"
+                  style="display: none"
+                  ><b
+                    class="editable editable-border"
+                    id="likes"
+                    onfocus="startInteraction('likes')"
+                    oninput="checkInteraction(this)"
+                    onblur="parseInteraction('likes')"
+                    >0</b
+                  >
+                  Like<span class="plural" id="likesPlural">s</span></span
+                >
+                <div
+                  class="editorInfo ui"
+                  id="numbersInfo"
+                  style="display: none"
+                >
+                  <button
+                    type="button"
+                    class="btn btn-link"
+                    onclick="randomize()"
+                  >
+                    <i class="fas fa-random"></i> Randomize all
+                  </button>
+                  <span id="invalidNumber" style="color: red; display: none"
+                    >That number is invalid. Should be an integer less than
+                    9999999999.</span
+                  >
+                </div>
+              </div>
+              <div class="buttonsContainer">
+                <div class="tweetButton">
+                  <svg viewBox="0 0 24 24">
+                    <g>
+                      <path
+                        d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="tweetButton">
+                  <svg viewBox="0 0 24 24">
+                    <g>
+                      <path
+                        d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="tweetButton">
+                  <svg viewBox="0 0 24 24">
+                    <g>
+                      <path
+                        d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+                <div class="tweetButton">
+                  <svg viewBox="0 0 24 24">
+                    <g>
+                      <path
+                        d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"
+                      ></path>
+                      <path
+                        d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="version" id="version"></div>
+      </div>
+    </div>
+    <!-- Below are modals - popups that are hidden until certain things are selected -->
+    <div class="modal fade" id="dateModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Change Date and Time</h5>
+          </div>
+          <div class="modal-body">
+            <div class="modalForm">
+              <div class="form-item bottom-margin-75">
+                <label for="timeInput">Time</label>
+                <input
+                  type="time"
+                  class="form-control"
+                  id="timeInput"
+                  value="12:00"
+                />
+              </div>
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col form-item">
+                    <label for="dayInput">Day</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="dayInput"
+                      min="1"
+                      max="31"
+                      step="1"
+                      value="1"
+                    />
+                  </div>
+                  <div class="col form-item">
+                    <label for="monthInput">Month</label>
+                    <select class="form-select" id="monthInput">
+                      <option value="Jan">Jan</option>
+                      <option value="Feb">Feb</option>
+                      <option value="Mar">Mar</option>
+                      <option value="Apr">Apr</option>
+                      <option value="May">May</option>
+                      <option value="Jun" selected>Jun</option>
+                      <option value="Jul">Jul</option>
+                      <option value="Aug">Aug</option>
+                      <option value="Sep">Sep</option>
+                      <option value="Oct">Oct</option>
+                      <option value="Nov">Nov</option>
+                      <option value="Dec">Dec</option>
+                    </select>
+                  </div>
+                  <div class="col form-item">
+                    <label for="yearInput">Year</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="yearInput"
+                      min="1"
+                      max="9999"
+                      step="1"
+                      value="2021"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn btn-link"
+              onclick="getCurrentDate()"
+            >
+              <i class="far fa-clock"></i> Use current time and date
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="pfpModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Change profile picture</h5>
+          </div>
+          <div class="modal-body">
+            <div class="modalForm">
+              <label>Upload image</label>
+              <input type="file" accept="image/*" id="pfpFiles" />
+              <small class="inputinfo"
+                >Make sure your image is square, otherwise it may get
+                stretched.</small
+              >
+            </div>
+            <button type="button" class="btn btn-link" onclick="resetPfp()">
+              <i class="fas fa-trash"></i> Reset image to default
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="imgModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add or change image</h5>
+          </div>
+          <div class="modal-body">
+            <div class="modalForm">
+              <label>Upload image</label>
+              <input type="file" accept="image/*" id="imgFiles" />
+            </div>
+            <button type="button" class="btn btn-link" onclick="removeImg()">
+              <i class="fas fa-trash"></i> Remove image
+            </button>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Done
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/c/compatible.js"></script>
+    <script src="/c/jquery-3.6.0.min.js"></script>
+    <script src="/c/bootstrap.bundle.min.js"></script>
+    <script src="/c/twitter-text/tgAutoLink.js"></script>
+    <script src="/c/twemoji/twemoji.min.js"></script>
+    <script src="html2canvas.min.js?v=1.1.4"></script>
+    <script src="tweet.js?v=0.5.4"></script>
+    <!-- The ?v= query string is just to get around browser caches. Changing it won't do anything -->
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "8759116336e244d5abd623f9adb6e8ee"}'
+    ></script>
+  </body>
+</html>
